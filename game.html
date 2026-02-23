@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BGMI UI</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:black;
+    color:white;
+}
+.page{
+    display:none;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.active{
+    display:flex;
+}
+#loading{
+    background: radial-gradient(circle,#1a1a1a,#000);
+}
+
+.title{
+    font-size:60px;
+    color:#ffcc00;
+    text-shadow:0 0 20px orange;
+}
+
+.bar{
+    width:300px;
+    height:18px;
+    border:2px solid gold;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.progress{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,orange,gold);
+    animation:load 3s forwards;
+}
+
+@keyframes load{
+    to{width:100%;}
+}
+
+#lobby{
+    background:url("https://images.unsplash.com/photo-1542751371-adc38448a05e") center/cover;
+}
+
+.menu{
+    position:absolute;
+    top:20px;
+    right:20px;
+}
+
+button{
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    border-radius:8px;
+    background:gold;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:orange;
+}
+.panel{
+    background:rgba(0,0,0,0.8);
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+}
+
+h1{
+    margin-bottom:20px;
+}
+</style>
+</head>
+<body>
+<div id="loading" class="page active">
+    <div class="title">BGMI</div>
+    <div class="bar"><div class="progress"></div></div>
+</div>
+<div id="lobby" class="page">
+    <h1>Lobby</h1>
+    <button onclick="show('game')">START GAME</button>
+    <button onclick="show('inventory')">INVENTORY</button>
+    <button onclick="show('settings')">SETTINGS</button>
+</div>
+<div id="game" class="page">
+    <div class="panel">
+        <h1>Matchmaking...</h1>
+        <p>Connecting to server</p>
+        <button onclick="show('lobby')">Cancel</button>
+    </div>
+</div>
+<div id="inventory" class="page">
+    <div class="panel">
+        <h1>Inventory</h1>
+        <p>Gun Skin</p>
+        <p>Outfit</p>
+        <p>Helmet Skin</p>
+        <button onclick="show('lobby')">Back</button>
+    </div>
+</div>
+<div id="settings" class="page">
+    <div class="panel">
+        <h1>Settings</h1>
+        <p>Sound: ON</p>
+        <p>Graphics: HD</p>
+        <p>Controls: Classic</p>
+        <button onclick="show('lobby')">Back</button>
+    </div>
+</div>
+<script>
+function show(pageId){
+    document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+    document.getElementById(pageId).classList.add("active");
+}
+setTimeout(()=>{
+    show("lobby");
+},3000);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BGMI Loading</title>
+<style>
+    body{
+        margin:0;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background: radial-gradient(circle at center, #1a1a1a, #000);
+        font-family: Arial, Helvetica, sans-serif;
+        color:white;
+        overflow:hidden;
+    }
+    .container{
+        text-align:center;
+    }
+    .title{
+        font-size:60px;
+        font-weight:bold;
+        letter-spacing:4px;
+        color:#ffcc00;
+        text-shadow:0 0 15px #ff9900;
+        animation: glow 1.5s infinite alternate;
+    }
+    @keyframes glow{
+        from{ text-shadow:0 0 10px #ff9900;}
+        to{ text-shadow:0 0 30px #ffaa00,0 0 60px #ff6600;}
+    }
+    .loading-text{
+        margin-top:20px;
+        font-size:20px;
+        letter-spacing:3px;
+        animation: blink 1s infinite;
+    }
+    @keyframes blink{
+        50%{opacity:0.4;}
+    }
+    .bar{
+        margin-top:30px;
+        width:300px;
+        height:18px;
+        border:2px solid #ffcc00;
+        border-radius:20px;
+        overflow:hidden;
+        box-shadow:0 0 10px #ff9900;
+    }
+    .progress{
+        height:100%;
+        width:0%;
+        background:linear-gradient(90deg,#ff9900,#ffcc00,#ff9900);
+        animation: load 5s linear forwards;
+    }
+    @keyframes load{
+        from{width:0;}
+        to{width:100%;}
+    }
+    .tip{
+        margin-top:25px;
+        font-size:14px;
+        color:#aaa;
+        animation: fade 3s infinite;
+    }
+    @keyframes fade{
+        0%,100%{opacity:0.3;}
+        50%{opacity:1;}
+    }
+    .button-link {
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: aqua;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .button-link:hover {
+        background-color: aqua;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="title">BGMI</div>
+    <div class="loading-text">LOADING...</div>
+    <div class="bar">
+        <div class="progress"></div>
+    </div>
+    <div class="tip">Tip: Stay in the safe zone!</div>
+    <a href="game.html" class="button-link">Start</a>
+</div>
+</body>
+</html>
