@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: aqua ;
+    text-align: center;
+}
+
+.container {
+    margin-top: 100px;
+    background: white;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: blue;
+}
+
+p {
+    margin-top: 15px;
+    font-weight: bold;
+}
